@@ -2,6 +2,9 @@ import React from 'react'
 import LoggedinLayout from '../layout/LoggedinLayout'
 import DashboardHeaderCards from '../components/DashboardHeaderCards'
 import RevenueChart from '../components/Charts/RevenueChart'
+import HelpCenter from '../components/HelpCenter'
+import RecentReviews from '../components/RecentReviews'
+import InvoiceAndOrderTable from '../components/Tables/InvoiceAndOrders'
 
 const Dashboard = () => {
   return (
@@ -45,10 +48,18 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <RevenueChart/>
+          <RevenueChart />
+        </div>
+        <div className='flex gap-x-5'>
+          <div className='w-[50%]'>
+            <HelpCenter />
+          </div>
+          <div className='w-[50%]'>
+            <RecentReviews />
+          </div>
         </div>
         <div>
-          
+          <InvoiceAndOrderTable/>
         </div>
       </>
     </LoggedinLayout>
