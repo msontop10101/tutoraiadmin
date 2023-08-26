@@ -13,7 +13,7 @@ const LoggedinLayout = ({ children }) => {
                     <div className=''>
                         <Header />
                     </div>
-                    <div className='bg-[white] ml-8'>
+                    <div className='mx-5'>
                         {children}
                     </div>
                 </div>
