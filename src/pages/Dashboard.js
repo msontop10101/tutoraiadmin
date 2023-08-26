@@ -1,8 +1,11 @@
 import React from 'react'
+import LoggedinLayout from '../layout/LoggedinLayout'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <LoggedinLayout>
+      <div>Dashboard</div>
+    </LoggedinLayout>
   )
 }
 

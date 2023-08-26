@@ -1,6 +1,8 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import visibility from '../../assets/images/visibility.png'
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
     const handleSubmit = () => {
@@ -22,25 +24,30 @@ const LoginForm = () => {
                 <Form className='w-full my-4 flex flex-col gap-y-6'>
                     <div>
                         <div className='pb-2'>
-                            <label className='text-white font-semibold'>Email</label>
+                            <label className='text-white font-bold text-lg'>Email</label>
                         </div>
-                        <Field name="email" type="text" className='py-3 w-full bg-white placeholder:text-[#333333] text-sm pl-5 rounded-xl'/>
+                        <Field name="email" type="text" className='py-3 w-full bg-white placeholder:text-[#333333] text-sm pl-5 rounded-xl focus:outline-none' />
                         {formik.touched.email && formik.errors.email && (
                             <div className='text-[red] text-sm'>{formik.errors.email}</div>
                         )}
                     </div>
 
-                    <div>
+                    <div className=''>
                         <div className='pb-2'>
-                            <label className='text-white font-semibold mb-5'>Password</label>
+                            <label className='text-white font-bold text-lg mb-5'>Password</label>
                         </div>
-                        <Field name="password" type="password" className='py-3 w-full bg-white placeholder:text-black text-sm pl-5 rounded-xl'/>
+                        <div className='flex items-center bg-[white] justify-between pr-4 rounded-xl'>
+                            <Field name="password" type="password" className='py-3 w-[95%] bg-[white] placeholder:text-black text-sm pl-5 rounded-xl focus:outline-none' />
+                            <div><img src={visibility} alt='visibility-icon' /></div>
+                        </div>
                         {formik.touched.password && formik.errors.password && (
                             <div className='text-[red] text-sm'>{formik.errors.password}</div>
                         )}
                     </div>
                     <div className='w-full flex justify-center items-center'>
-                        <button className='border-2 w-[204px] py-3 rounded-2xl border-white text-white'>Login</button>
+                        <Link to={'/dashboard'}>
+                            <button className='border-2 w-[150px] py-1 rounded-xl border-white text-white font-bold text-lg'>Login</button>
+                        </Link>
                     </div>
                 </Form>
             )}
