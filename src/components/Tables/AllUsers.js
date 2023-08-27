@@ -53,8 +53,8 @@ const AllUsers = () => {
                                 <td className="py-2 px-6 font-medium">{item.role}</td>
                                 <td className="py-2 px-6 font-medium">
                                     <div className='flex gap-x-5'>
-                                        <button className='bg-[#26CD37] py-1 px-6 text-white rounded-lg'>Enable</button>
-                                        <button className='bg-[#BA191A] py-1 px-6 text-white rounded-lg'>Disable</button>
+                                        <button className={`bg-[#26CD37] py-1 px-6 text-white rounded-lg ${item.status === 'Enable' && 'bg-opacity-25'}`}>Enable</button>
+                                        <button className={`bg-[#BA191A] py-1 px-6 text-white rounded-lg ${item.status === 'Disable' && 'bg-opacity-25'}`}>Disable</button>
                                     </div>
                                 </td>
                             </tr>
