@@ -46,7 +46,12 @@ const AllUsers = () => {
                     <tbody>
                         {data.map((item) => (
                             <tr key={item.no} className="hover:bg-grey-lighter">
-                                <td className="py-2 px-6 font-medium">{item.no}</td>
+                                <td className="py-2 px-6 font-medium flex jusity-center items-center gap-x-2">
+                                    <div className='flex justify-center items-center'>
+                                        <input type='checkbox' className='w-6 h-6'/>
+                                    </div>
+                                    <div>{item.no}</div>
+                                </td>
                                 <td className="py-2 px-6 font-medium">{item.email}</td>
                                 <td className="py-2 px-6 font-medium">{item.phone}</td>
                                 <td className="py-2 px-6 font-medium">{item.name}</td>

@@ -27,7 +27,12 @@ const InvoiceAndOrderTable = () => {
                     <tbody>
                         {data.map((item) => (
                             <tr key={item.no} className="hover:bg-grey-lighter">
-                                <td className="py-1 px-6 font-semibold">{item.no}</td>
+                                <td className="py-1 px-6 font-semibold flex jusity-center items-center gap-x-2">
+                                    <div className='flex justify-center items-center'>
+                                        <input type='checkbox' className='w-6 h-6' />
+                                    </div>
+                                    <div>{item.no}</div>
+                                </td>
                                 <td className="py-1 px-6 font-semibold">{item.orderNumber}</td>
                                 <td className="py-1 px-6 font-semibold">{item.email}</td>
                                 <td className="py-1 px-6 font-semibold">{item.name}</td>

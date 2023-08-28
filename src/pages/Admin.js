@@ -17,7 +17,7 @@ const Admin = () => {
             <li onClick={() => setSelected('add-admin')} className={`cursor-pointer text-[#A0A0A0] font-semibold`} style={{ color: selected === "add-admin" && "black", borderBottom: selected === "add-admin" && "2px solid black" }}>Add Administrator</li>
             <li onClick={() => setSelected('all-users')} className='cursor-pointer text-[#A0A0A0] font-semibold' style={{ color: selected === "all-users" && "black", borderBottom: selected === "all-users" && "2px solid black" }}>All Users</li>
           </ul>
-          {selected === 'all-users' && <div className='flex w-[70%] justify-between'>
+          {selected === 'all-users' && <div className='flex w-[150%] justify-between'>
             <div className='flex items-center bg-white rounded-full pl-10 gap-x-10 w-[50%]'>
               <img src={searchicon} alt='searchicon' />
               <input placeholder='Search' className="focus:outline-none py-1" />
