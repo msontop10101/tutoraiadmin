@@ -3,6 +3,7 @@ import LoggedinLayout from '../layout/LoggedinLayout'
 import searchicon from '../assets/images/searchicon.png'
 import filter from '../assets/images/filter.png'
 import Unsubscribed from '../components/Tables/Unsubscribed'
+import Subscribed from '../components/Tables/Subscribed'
 
 const Student = () => {
   const [selected, setSelected] = useState('unsubscribed')
@@ -28,7 +29,7 @@ const Student = () => {
           </div>
         </div>
         <div>
-          <Unsubscribed/>
+          {selected === 'subscribed' ? <Subscribed/> : <Unsubscribed/> }
         </div>
       </>
     </LoggedinLayout>

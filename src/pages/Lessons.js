@@ -1,8 +1,13 @@
 import React from 'react'
+import LoggedinLayout from '../layout/LoggedinLayout'
 
 const Lessons = () => {
   return (
-    <div>Lessons</div>
+    <LoggedinLayout>
+      <>
+        <div>Lessons</div>
+      </>
+    </LoggedinLayout>
   )
 }
 

@@ -5,6 +5,8 @@ import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import Student from "./pages/Student";
 import Subscribers from './pages/Subscribers'
+import Lessons from "./pages/Lessons";
+import StudentProfile from "./pages/StudentProfile";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/student" element={<Student />} />
         <Route path="/subscribers" element={<Subscribers />} />
+        <Route path="/lessons" element={<Lessons />} />
+        <Route path="/student-profile" element={<StudentProfile />} />
       </Routes>
     </>
   );
