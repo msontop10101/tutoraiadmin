@@ -13,6 +13,7 @@ import Statistics from './pages/Statistics'
 import Marketing from './pages/Marketing'
 import PreTestContent from './pages/PreTestContent'
 import Settings from './pages/Settings'
+import MarketingMessage from "./components/MarketingMessage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/pre-test-content" element={<PreTestContent />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/student-profile" element={<StudentProfile />} />
+        <Route path="/marketing-messages" element={<MarketingMessage />} />
       </Routes>
     </>
   );
