@@ -10,7 +10,7 @@ const MarketingMessage = () => {
   return (
     <>
         <LoggedinLayout>
-            <div>
+            <div className='p-8'>
                 <div>
                     <p className='font-bold text-xl'>Message</p>
                 </div>
