@@ -1,8 +1,15 @@
 import React from 'react'
+import LoggedinLayout from '../layout/LoggedinLayout'
 
 const Marketing = () => {
   return (
-    <div>Marketing</div>
+    <>
+      <LoggedinLayout>
+        <div>
+          <p>Marketing</p>
+        </div>
+      </LoggedinLayout>
+    </>
   )
 }
 

@@ -1,8 +1,15 @@
 import React from 'react'
+import LoggedinLayout from '../layout/LoggedinLayout'
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <>
+      <LoggedinLayout>
+        <div>
+          <p>Settings!</p>
+        </div>
+      </LoggedinLayout>
+    </>
   )
 }
 

@@ -1,8 +1,15 @@
 import React from 'react'
+import LoggedinLayout from '../layout/LoggedinLayout'
 
 const PreTestContent = () => {
   return (
-    <div>PreTestContent</div>
+    <>
+      <LoggedinLayout>
+        <div>
+          <p>Pre-test content</p>
+        </div>
+      </LoggedinLayout>
+    </>
   )
 }
 

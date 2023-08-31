@@ -29,7 +29,7 @@ function App() {
         <Route path="/invoice" element={<Invoice />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/marketing" element={<Marketing />} />
-        <Route path="/pre-test-conetent" element={<PreTestContent />} />
+        <Route path="/pre-test-content" element={<PreTestContent />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/student-profile" element={<StudentProfile />} />
       </Routes>
