@@ -25,7 +25,7 @@ const Data = [
         "name": 'Lessons'
     },
     {
-        "route": '/payment',
+        "route": '/payments',
         "name": 'Payments'
     },
     {
