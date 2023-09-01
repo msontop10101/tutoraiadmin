@@ -1,16 +1,42 @@
-import React from 'react'
+import React, {useState} from 'react'
 import LoggedinLayout from '../layout/LoggedinLayout'
+import circleArrow from '../assets/images/circleArrow.png'
+import Listening from '../components/Listening'
+import Proficency from '../components/Proficency'
+import Writing from '../components/Writing'
 
 const PreTestContent = () => {
+    const [selected, setSelected] = useState('listening')
   return (
     <>
-      <LoggedinLayout>
-        <div>
-          <p>Pre-test content</p>
-        </div>
-      </LoggedinLayout>
+        <LoggedinLayout>
+            <div className='p-8'>
+                <div>
+                    <p className='font-bold text-3xl capitalize'>{selected}</p>
+                </div>
+                <div className='flex items-center gap-x-7'>
+                    <div className='flex flex-col gap-y-4'>
+                        <div className='flex gap-x-5 items-center cursor-pointer' onClick={() => setSelected('listening')}>
+                            <img src={circleArrow} alt='arrow'/>
+                            <p className='text-lg text-[#A8A8A8]' style={{ color: selected === "listening" && "black", borderBottom: selected === "listening" && "2px solid black" }}>Listening</p>
+                        </div>
+                        <div className='flex gap-x-5 items-center cursor-pointer' onClick={() => setSelected('proficency')}>
+                            <img src={circleArrow} alt='arrow'/>
+                            <p className='text-lg text-[#A8A8A8]' style={{ color: selected === "proficency" && "black", borderBottom: selected === "proficency" && "2px solid black" }}>Proficency</p>
+                        </div>
+                        <div className='flex gap-x-5 items-center cursor-pointer' onClick={() => setSelected('writings')}>
+                            <img src={circleArrow} alt='arrow'/>
+                            <p className='text-lg text-[#A8A8A8]' style={{ color: selected === "writings" && "black", borderBottom: selected === "writings" && "2px solid black" }}>Writings</p>
+                        </div>
+                    </div>
+                    <div>
+                        {selected === 'listening' ? <Listening/> : selected === 'proficency' ? <Proficency/> : <Writing/>}
+                    </div>
+                </div>
+            </div>
+        </LoggedinLayout>
     </>
   )
 }
 
-export default PreTestContent
+export default PreTestContent;
