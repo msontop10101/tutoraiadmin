@@ -14,7 +14,7 @@ const PreTestContent = () => {
                 <div>
                     <p className='font-bold text-3xl capitalize'>{selected}</p>
                 </div>
-                <div className='flex items-center gap-x-7'>
+                <div className='flex pt-10 gap-x-7 w-full'>
                     <div className='flex flex-col gap-y-4'>
                         <div className='flex gap-x-5 items-center cursor-pointer' onClick={() => setSelected('listening')}>
                             <img src={circleArrow} alt='arrow'/>
@@ -29,7 +29,7 @@ const PreTestContent = () => {
                             <p className='text-lg text-[#A8A8A8]' style={{ color: selected === "writings" && "black", borderBottom: selected === "writings" && "2px solid black" }}>Writings</p>
                         </div>
                     </div>
-                    <div>
+                    <div className='w-[80%]'>
                         {selected === 'listening' ? <Listening/> : selected === 'proficency' ? <Proficency/> : <Writing/>}
                     </div>
                 </div>
