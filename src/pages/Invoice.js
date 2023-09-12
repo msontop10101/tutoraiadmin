@@ -2,6 +2,7 @@ import React from 'react'
 import searchicon from '../assets/images/searchicon.png'
 import LoggedinLayout from '../layout/LoggedinLayout'
 import InvoiceList from '../components/Tables/InvoiceList'
+import ModalContainer from '../components/Modal/ModalContainer'
 
 const Invoice = () => {
   return (
@@ -53,6 +54,7 @@ const Invoice = () => {
             </div>
           </div>
         </div>
+        <ModalContainer/>
       </LoggedinLayout>
     </>
   )
