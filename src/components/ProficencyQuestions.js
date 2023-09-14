@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import whitecircle from '../assets/images/whitecircle.png';
 
-const QuestionCard = () => {
+const ProficiencyQuestions = () => {
   const [options, setOptions] = useState(['Option 1', 'Option 2', 'Option 3']);
   const [answers, setAnswers] = useState([]);
   const [newOption, setNewOption] = useState('');
@@ -9,12 +9,30 @@ const QuestionCard = () => {
   const [isOptionFormVisible, setIsOptionFormVisible] = useState(false);
   const [isAnswerFormVisible, setIsAnswerFormVisible] = useState(false);
 
+  // New state variables for Question Highlights, Instructions, and Instruction Highlights
+  const [questionHighlights, setQuestionHighlights] = useState([]);
+  const [instructions, setInstructions] = useState([]);
+  const [instructionHighlights, setInstructionHighlights] = useState([]);
+
   const handleInputOption = (e) => {
     setNewOption(e.target.value);
   };
 
   const handleInputAnswer = (e) => {
     setNewAnswer(e.target.value);
+  };
+
+  // New functions for handling input changes for Question Highlights, Instructions, and Instruction Highlights
+  const handleInputQuestionHighlights = (e) => {
+    setQuestionHighlights([...questionHighlights, e.target.value]);
+  };
+
+  const handleInputInstructions = (e) => {
+    setInstructions([...instructions, e.target.value]);
+  };
+
+  const handleInputInstructionHighlights = (e) => {
+    setInstructionHighlights([...instructionHighlights, e.target.value]);
   };
 
   const handleSubmitOption = (e) => {
@@ -57,10 +75,43 @@ const QuestionCard = () => {
               <p>Questions: </p>
               <input
                 type="text"
-                id="remail"
-                name="remail"
+                id="questions"
+                name="questions"
                 required
                 className='rounded-lg border border-[black] h-[53px]'
+              />
+            </div>
+            <div className='flex items-center gap-x-2'>
+              <p>Questions Highlight: </p>
+              <input
+                type="text"
+                id="questionsHighlight"
+                name="questionsHighlight"
+                required
+                className='rounded-lg border border-[black] h-[53px]'
+                onChange={handleInputQuestionHighlights}
+              />
+            </div>
+            <div className='flex items-center gap-x-2'>
+              <p>Instructions: </p>
+              <input
+                type="text"
+                id="instructions"
+                name="instructions"
+                required
+                className='rounded-lg border border-[black] h-[53px]'
+                onChange={handleInputInstructions}
+              />
+            </div>
+            <div className='flex items-center gap-x-2'>
+              <p>Instruction Highlights: </p>
+              <input
+                type="text"
+                id="instructionHighlights"
+                name="instructionHighlights"
+                required
+                className='rounded-lg border border-[black] h-[53px]'
+                onChange={handleInputInstructionHighlights}
               />
             </div>
             <div className='flex items-center gap-x-2'>
@@ -146,4 +197,4 @@ const QuestionCard = () => {
   );
 };
 
-export default QuestionCard;
+export default ProficiencyQuestions;

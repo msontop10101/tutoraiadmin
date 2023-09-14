@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import whitecircle from '../assets/images/whitecircle.png';
 
-const QuestionCard = () => {
+const WritingQuestions = () => {
   const [options, setOptions] = useState(['Option 1', 'Option 2', 'Option 3']);
   const [answers, setAnswers] = useState([]);
   const [newOption, setNewOption] = useState('');
@@ -146,4 +146,4 @@ const QuestionCard = () => {
   );
 };
 
-export default QuestionCard;
+export default WritingQuestions;

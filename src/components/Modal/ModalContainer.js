@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import logo from '../../assets/images/logoimg.png'
-import searchicon from '../../assets/images/searchicon.png'
+import logo from '../../assets/images/logoimg.png';
+import searchicon from '../../assets/images/searchicon.png';
 
 const ModalContainer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         remail: '',
-        message: '',
-        subscribe: false,
+        issueddate: '',
+        paymentmethod: '',
+        name: '',
+        email: '',
+        lessons: '',
+        price: '',
+        totalprice: '',
+        totalamount: '',
+        note: '',
     });
 
     const openModal = () => {
@@ -30,7 +37,21 @@ const ModalContainer = () => {
             ...prevData,
             [name]: type === 'checkbox' ? checked : value,
         }));
-    }
+    };
+
+    const handleInputClick = (event) => {
+        event.stopPropagation();
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent the form from submitting (page refresh)
+
+        // Here, you can handle the form submission, e.g., send data to a server
+        console.log('Form data submitted:', formData);
+
+        // Close the modal or perform any other action
+        closeModal();
+    };
 
     return (
         <>
@@ -50,7 +71,7 @@ const ModalContainer = () => {
                     onClick={handleOverlayClick}
                 >
                     <div className='w-full h-full flex justify-center items-center my-20'>
-                        <div className='w-[40%] bg-[white] rounded-lg p-4'>
+                        <div className='w-[40%] bg-[white] rounded-lg p-4' onClick={handleInputClick}>
                             <div className='w-full'>
                                 <div className='flex items-center font-bold justify-between py-[1px]' style={{ borderBottom: '1px solid black' }}>
                                     <div className='flex items-center'>
@@ -71,7 +92,7 @@ const ModalContainer = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <form className='flex flex-col gap-y-6'>
+                                    <form className='flex flex-col gap-y-6' onSubmit={handleSubmit}>
                                         <div className='flex flex-col'>
                                             <label className='text-lg'>Recipient Email</label>
                                             <input
@@ -80,6 +101,7 @@ const ModalContainer = () => {
                                                 name="remail"
                                                 value={formData.remail}
                                                 onChange={handleInputChange}
+                                                onClick={handleInputClick}
                                                 required
                                                 className='rounded-lg border border-[#777777] h-[53px]'
                                             />
@@ -88,9 +110,9 @@ const ModalContainer = () => {
                                             <label className='text-lg'>Issued on</label>
                                             <input
                                                 type="text"
-                                                id="remail"
-                                                name="remail"
-                                                value={formData.remail}
+                                                id="issueddate"
+                                                name="issueddate"
+                                                value={formData.issueddate}
                                                 onChange={handleInputChange}
                                                 required
                                                 className='rounded-lg border border-[#777777] h-[53px]'
@@ -104,9 +126,9 @@ const ModalContainer = () => {
                                                 </div>
                                                 <input
                                                     type="text"
-                                                    id="remail"
-                                                    name="remail"
-                                                    value={formData.remail}
+                                                    id="paymentmethod"
+                                                    name="paymentmethod"
+                                                    value={formData.paymentmethod}
                                                     onChange={handleInputChange}
                                                     required
                                                     placeholder='Paypal'
@@ -118,9 +140,9 @@ const ModalContainer = () => {
                                             <label>Name: </label>
                                             <input
                                                 type="text"
-                                                id="remail"
-                                                name="remail"
-                                                value={formData.remail}
+                                                id="name"
+                                                name="name"
+                                                value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
                                                 className='rounded-lg border border-[#777777] h-[53px] w-full'
@@ -130,9 +152,9 @@ const ModalContainer = () => {
                                             <label>Email: </label>
                                             <input
                                                 type="text"
-                                                id="remail"
-                                                name="remail"
-                                                value={formData.remail}
+                                                id="email"
+                                                name="email"
+                                                value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
                                                 className='rounded-lg border border-[#777777] h-[53px] w-full'
@@ -143,9 +165,9 @@ const ModalContainer = () => {
                                                 <label className='text-lg'>Lessons</label>
                                                 <input
                                                     type="text"
-                                                    id="remail"
-                                                    name="remail"
-                                                    value={formData.remail}
+                                                    id="lessons"
+                                                    name="lessons"
+                                                    value={formData.lessons}
                                                     onChange={handleInputChange}
                                                     required
                                                     className='rounded-lg border border-[#777777] h-[53px] w-full'
@@ -155,9 +177,9 @@ const ModalContainer = () => {
                                                 <label className='text-lg'>Price</label>
                                                 <input
                                                     type="text"
-                                                    id="remail"
-                                                    name="remail"
-                                                    value={formData.remail}
+                                                    id="price"
+                                                    name="price"
+                                                    value={formData.price}
                                                     onChange={handleInputChange}
                                                     required
                                                     className='rounded-lg border border-[#777777] h-[53px] w-[full]'
@@ -167,9 +189,9 @@ const ModalContainer = () => {
                                                 <label className='text-lg'>Total Price</label>
                                                 <input
                                                     type="text"
-                                                    id="remail"
-                                                    name="remail"
-                                                    value={formData.remail}
+                                                    id="totalprice"
+                                                    name="totalprice"
+                                                    value={formData.totalprice}
                                                     onChange={handleInputChange}
                                                     required
                                                     className='rounded-lg border border-[#777777] h-[53px] w-full'
@@ -184,9 +206,9 @@ const ModalContainer = () => {
                                                 <label className='font-bold text-lg'>Total Amount: </label>
                                                 <input
                                                     type="text"
-                                                    id="remail"
-                                                    name="remail"
-                                                    value={formData.remail}
+                                                    id="totalamount"
+                                                    name="totalamount"
+                                                    value={formData.totalamount}
                                                     onChange={handleInputChange}
                                                     required
                                                     className='rounded-lg border border-[#777777] h-[33px]'
@@ -195,7 +217,13 @@ const ModalContainer = () => {
                                         </div>
                                         <div className='flex flex-col'>
                                             <label className='text-[#ABABAB]'>Note</label>
-                                            <textarea rows='5' className='rounded-lg border border-[#777777]'></textarea>
+                                            <textarea
+                                                value={formData.note}
+                                                onChange={handleInputChange}
+                                                name="note"
+                                                rows='5'
+                                                className='rounded-lg border border-[#777777]'
+                                            />
                                         </div>
                                         <div className='w-full flex justify-end'>
                                             <button className='font-bold text-white text-md bg-[#17206C] py-2 px-6 rounded-lg'>
