@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import searchicon from '../assets/images/searchicon.png'
 import LoggedinLayout from '../layout/LoggedinLayout'
 import InvoiceList from '../components/Tables/InvoiceList'
 import ModalContainer from '../components/Modal/ModalContainer'
+import InvoiceModal from '../components/Modal/InvoiceModal'
 
 const Invoice = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+    
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
   return (
     <>
       <LoggedinLayout>
@@ -47,14 +54,17 @@ const Invoice = () => {
           </div>
           <div className='flex flex-col gap-y-5'>
             <div className='w-full flex justify-end'>
-              <p className='text-[#17F112] font-bold text-xl'>+ Create</p>
+              <p onClick={() => setIsModalOpen(true)} className='text-[#17F112] font-bold text-xl cursor-pointer'>+ Create</p>
             </div>
             <div>
               <InvoiceList />
             </div>
           </div>
         </div>
-        <ModalContainer/>
+        <div className={`${isModalOpen !== true && 'hidden'}`}>
+          <InvoiceModal closeModal={closeModal}/>
+        </div>
+        {/* <ModalContainer/> */}
       </LoggedinLayout>
     </>
   )
