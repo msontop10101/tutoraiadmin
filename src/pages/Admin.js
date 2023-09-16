@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import LoggedinLayout from '../layout/LoggedinLayout'
 import AdminSignupForm from '../components/Forms/AdminSignupForm'
 import AllUsers from '../components/Tables/AllUsers'
-
 import searchicon from '../assets/images/searchicon.png'
+import { Link } from 'react-router-dom'
 
 
 
@@ -23,8 +23,8 @@ const Admin = () => {
               <input placeholder='Search' className="focus:outline-none py-1" />
             </div>
             <div className='flex gap-x-5'>
-              <button className='font-bold text-white bg-[#26CD37] py-1 px-5 rounded-md'>+ Add</button>
-              <button className='font-bold text-white bg-[#BA191A] py-1 px-5 rounded-md'>Remove</button>
+              <button className='font-bold text-white bg-[#26CD37] py-1 px-5 rounded-md' onClick={() => setSelected('add-admin')}>+ Add</button>
+              <button className='font-bold text-white bg-[#BA191A] py-1 px-5 rounded-md' onClick={() => setSelected('add-admin')}>Remove</button>
             </div>
           </div>}
         </div>

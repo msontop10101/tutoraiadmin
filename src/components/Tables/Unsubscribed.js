@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import FeedbackModal from '../Modal/FeedbackModal';
 
 const data = [
     {
@@ -31,8 +32,17 @@ const data = [
 ];
 
 const Unsubscribed = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
     return (
         <>
+            <div className={`${isModalOpen === true ? 'block' : 'hidden'}`}>
+                <FeedbackModal closeModal={closeModal}/>
+            </div>
             <div className='bg-[white] my-2'>
                 <table className="w-full text-left border-collapse ">
                     <thead>
@@ -67,7 +77,7 @@ const Unsubscribed = () => {
                                 </td>
                                 <td className="py-1 px-6 font-medium">
                                     <div className='flex gap-x-5'>
-                                        <button className={`bg-[#17206C] text-sm py-1 px-1 text-white rounded-lg `}>View Feedback</button>
+                                        <button onClick={() => setIsModalOpen(true)} className={`bg-[#17206C] text-sm py-1 px-1 text-white rounded-lg `}>View Feedback</button>
                                     </div>
                                 </td>
                             </tr>

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, } from "formik";
+import SuccessModal from "../Modal/SuccessModal";
+
 
 const AdminSignupForm = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
     return (
         <>
+            <div className={`${isModalOpen == true ? 'block' : 'hidden'}`}>
+                <SuccessModal closeModal={closeModal}/>
+            </div>
             <div className="bg-white p-14 my-2 mx-10">
                 <Formik
                     initialValues={{
@@ -84,13 +97,14 @@ const AdminSignupForm = () => {
                                         <p className="bg-white p-2">Privilege Level</p>
                                     </label>
                                     <Field as="select" name="privilegeLevel" className="bg-[#E4E5EF]">
-                                        <option value="">Select a privilege level</option>
                                         <option value="view-only">View Only</option>
+                                        <option value="">Edit</option>
                                     </Field>
                                 </div>
                             </div>
                             <div className="w-full flex justify-end">
                                 <button
+                                    onClick={() => setIsModalOpen(true)}
                                     type="submit"
                                     disabled={isSubmitting}
                                     className={`bg-[#17206C] text-white px-8 py-2 rounded-md font-semibold ${isSubmitting && "opacity-50 cursor-not-allowed"

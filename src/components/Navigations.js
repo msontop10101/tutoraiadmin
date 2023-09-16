@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import blacksettings from '../assets/images/blacksettings.png'
 import logout from '../assets/images/logouticon.png'
@@ -61,13 +61,15 @@ const lData = [
 ]
 
 const Navigations = () => {
+    const [active, setActive] = useState(null)
+    
     return (
         <>
             <div className='flex flex-col h-full justify-between'>
                 <ul className='w-full text-center'>
                     {Data.map((item, index) => (
                         <li key={index} className='my-1 py-1'>
-                            <Link to={item.route} className='hover:bg-[#17206C] px-2 py-1 rounded-md font-semibold hover:text-white transition duration-300 ease-in-out'>
+                            <Link to={item.route} onClick={() => setActive(item.name)} className={`hover:bg-[#17206C] px-2 py-1 rounded-md font-semibold hover:text-white transition duration-300 ease-in-out`}>
                                 {item.name}
                             </Link>
                         </li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const data = [
     {
@@ -64,7 +65,7 @@ const Subscribed = () => {
                                 <td className="py-1 px-6 font-medium ">{item.phone}</td>
                                 <td className="py-1 px-6 font-medium">
                                     <div className='flex gap-x-5'>
-                                        <button className={`bg-[#17206C] text-sm py-1 px-4 text-white rounded-lg `}>View</button>
+                                        <Link to={'/student-profile'}><button className={`bg-[#17206C] text-sm py-1 px-4 text-white rounded-lg `}>View</button></Link>
                                     </div>
                                 </td>
                             </tr>
