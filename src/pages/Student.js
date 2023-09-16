@@ -40,7 +40,7 @@ const Student = () => {
               </div>
               <div className='bg-[red]'>
                 <button className='font-bold text-white bg-[#5407B7] py-1 px-5 rounded-md' onClick={() => setEdropdown(!edropdown)}>Export</button>
-                <div className={`${edropdown ? 'block' : 'hidden'} absolute top-10`}>
+                <div className={`${edropdown ? 'block' : 'hidden'} absolute top-10 right-7`}>
                   <ExportDropdown closeDropdown={closeDropdown} />
                 </div>
               </div>
