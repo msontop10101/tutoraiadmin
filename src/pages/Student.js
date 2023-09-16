@@ -4,9 +4,14 @@ import searchicon from '../assets/images/searchicon.png'
 import filter from '../assets/images/filter.png'
 import Unsubscribed from '../components/Tables/Unsubscribed'
 import Subscribed from '../components/Tables/Subscribed'
+import ExportDropdown from '../components/Dropdowns/ExportDropdown'
 
 const Student = () => {
   const [selected, setSelected] = useState('unsubscribed')
+  const [edropdown, setEdropdown] = useState(false)
+  const closeDropdown = () => {
+    setEdropdown(false)
+  }
   return (
     <LoggedinLayout>
       <>
@@ -20,11 +25,14 @@ const Student = () => {
               <img src={searchicon} alt='searchicon' />
               <input placeholder='Search' className="focus:outline-none py-1 bg-[transparent]" />
             </div>
-            <div className='flex gap-x-5 items-center'>
+            <div className='flex gap-x-5 items-center relative'>
               <div>
                 <img src={filter} alt='filter'/>
               </div>
-              <button className='font-bold text-white bg-[#5407B7] py-1 px-5 rounded-md'>Export</button>
+              <button className='font-bold text-white bg-[#5407B7] py-1 px-5 rounded-md' onClick={() => setEdropdown(!edropdown)}>Export</button>
+              <div className={`${edropdown ? 'block': 'hidden'} absolute top-10`}>
+                <ExportDropdown closeDropdown={closeDropdown}/>
+              </div>
             </div>
           </div>
         </div>
